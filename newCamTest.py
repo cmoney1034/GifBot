@@ -1,7 +1,7 @@
 from cv2 import *
 import os
 
-def CamTest():
+def CamTest(index):
     stream=cv2.VideoCapture(0)
     while True:
 
@@ -13,7 +13,7 @@ def CamTest():
             if ret:    # frame captured without any errors
                 imwrite("filename.jpg",frame) #save image
                 destroyWindow("cam-test")
-                os.system('scp ~/Projects/GifBot/filename.jpg azureuser@40.114.15.125:/var/www/html/image.png')
+                os.system('scp ~/Projects/GifBot/filename.jpg azureuser@40.114.15.125:/var/www/html/' + str(index) + 'image.jpg')
                 break  
    
     stream.release()

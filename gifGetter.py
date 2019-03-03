@@ -6,7 +6,7 @@ import webbrowser
 
 def getGif(query):
     api_key = "szq7jGYSNk7o9nHttekOuD6busT5MmKs"
-    numberOfResults = 5
+    numberOfResults = 10
     
     response = requests.get("http://api.giphy.com/v1/gifs/search?q=" + query + "&api_key=" + api_key + "&limit=" + str(numberOfResults))
     

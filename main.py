@@ -2,10 +2,16 @@ import gifGetter
 import api
 import newCamTest
 
-newCamTest.CamTest()
 
-ashuzeOutput = api.APIRequest(api.gifImage, api.gifKey)
+count = 0
+while True:
 
-emotion = api.parseJSON(ashuzeOutput)
+    newCamTest.CamTest(count)
 
-gifGetter.getGif(emotion)
+    ashuzeOutput = api.APIRequest("http://40.114.15.125/" + str(count) + "image.jpg", api.gifKey)
+    
+    emotion = api.parseJSON(ashuzeOutput)
+    
+    gifGetter.getGif(emotion)
+
+    count += 1

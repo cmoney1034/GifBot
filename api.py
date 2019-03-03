@@ -18,6 +18,7 @@ def APIRequest(imageLocation, APIKey):
     })
     
     body = json.dumps({"url": imageLocation })
+    print(body)
     
     try:
         conn = http.client.HTTPSConnection('eastus.api.cognitive.microsoft.com')
@@ -32,9 +33,9 @@ def APIRequest(imageLocation, APIKey):
 
 def parseJSON(jsonText):
 
-    data = json.loads(jsonText)
+    info = json.loads(jsonText)
 
-    emotionDict = data[0]['faceAttributes']['emotion']
+    emotionDict = info[0]['faceAttributes']['emotion']
 
     return max(emotionDict, key=emotionDict.get)
 
