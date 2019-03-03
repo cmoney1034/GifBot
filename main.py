@@ -2,8 +2,10 @@ import gifGetter
 import api
 import newCamTest
 
-CamTest()
+newCamTest.CamTest()
 
-APIRequest(gifImage, gifKey)
+ashuzeOutput = api.APIRequest(api.gifImage, api.gifKey)
 
-parseJSON(APIRequest(gifImage, gifKey))
+emotion = api.parseJSON(ashuzeOutput)
+
+gifGetter.getGif(emotion)

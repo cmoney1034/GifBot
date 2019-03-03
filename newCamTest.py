@@ -2,7 +2,7 @@ from cv2 import *
 import os
 
 def CamTest():
-    stream=cv2.VideoCapture(0)
+    stream=cv2.VideoCapture(1)
     while True:
 
         ret, frame=stream.read()
