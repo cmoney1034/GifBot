@@ -1,7 +1,7 @@
 import http.client, urllib.request, urllib.parse, urllib.error, base64, json, operator
 
-sampleImage = "http://40.114.15.125/image.png"
-sampleKey = '070f887148c6400ca1bf9c7532ad1aa5'
+gifImage = "http://40.114.15.125/image.png"
+gifKey = '070f887148c6400ca1bf9c7532ad1aa5'
 
 def APIRequest(imageLocation, APIKey):
     headers = {
@@ -30,9 +30,8 @@ def APIRequest(imageLocation, APIKey):
     except Exception as e:
         print("[Errno {0}] {1}".format(e.errno, e.strerror))
 
-#sampleJSON is declared for debugging purposes
-sampleJSON = '[{"faceRectangle":{"top":99,"left":140,"width":120,"height":120},"faceAttributes":{"emotion":{"anger":0.0,"contempt":0.0,"disgust":0.0,"fear":0.0,"happiness":1.0,"neutral":0.0,"sadness":0.0,"surprise":0.0}}}]'
 def parseJSON(jsonText):
+
     data = json.loads(jsonText)
 
     emotionDict = data[0]['faceAttributes']['emotion']
@@ -41,4 +40,4 @@ def parseJSON(jsonText):
 
 #Used for debugging purposes
 #APIRequest(sampleImage, sampleKey)
-print(parseJSON(APIRequest(sampleImage, sampleKey)))
+#print(parseJSON(APIRequest(gifImage, gifKey)))
