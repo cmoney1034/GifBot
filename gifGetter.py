@@ -4,8 +4,6 @@ import random
 import urllib
 import webbrowser
 
-q = "angry"
-
 def getGif(query):
     api_key = "szq7jGYSNk7o9nHttekOuD6busT5MmKs"
     numberOfResults = 5
